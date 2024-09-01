@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Aquí tienes un ejemplo de un archivo `README.md` para tu proyecto:
+
+---
+
+# Next.js Vehicle Filter and Result Application
+
+This is a Next.js application that allows users to filter vehicle models by type and model year, and view the results on a separate page. The project uses Tailwind CSS for styling and React's `Suspense` for handling loading states.
+
+## Features
+
+- **Filter Page**: Allows users to select a vehicle type and model year. The "Next" button becomes enabled only when both selections are made.
+- **Result Page**: Displays a list of vehicle models based on the selected vehicle type and model year.
+- **Static Generation**: Utilizes `generateStaticParams` for pre-rendering the result pages based on the selected parameters.
+- **Data Fetching**: Fetches vehicle data from the NHTSA API.
+- **Responsive Design**: Styled with Tailwind CSS, following best practices for responsive design and accessibility.
+- **Code Quality**: Configured with ESLint and Prettier to ensure consistent and clean code.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables:
+
+   - Create a `.env.local` file in the root directory and add any necessary environment variables.
+
+### Running the Application
+
+To start the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To build the application for production:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will generate the optimized build files in the `.next` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linting and Formatting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To check for linting errors:
 
-## Deploy on Vercel
+```bash
+npm run lint
+# or
+yarn lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To format the code with Prettier:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run format
+# or
+yarn format
+```
+
+## Project Structure
+
+- **pages/**: Contains the Next.js pages, including the filter and result pages.
+- **components/**: Contains the reusable React components used in the application.
+- **styles/**: Global styles and Tailwind CSS configuration.
+- **.env.local**: Environment variables for the project (not included in the repository).
+- **.eslintrc.js**: ESLint configuration.
+- **.prettierrc**: Prettier configuration.
+
+## API Endpoints
+
+- **Vehicle Types**: Fetches the vehicle types for the filter dropdown.
+
+  ```
+  https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json
+  ```
+
+- **Vehicle Models**: Fetches vehicle models by make ID and model year for the result page.
+
+  ```
+  https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json
+  ```
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to modify the README to better suit your project's needs!
