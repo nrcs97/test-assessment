@@ -1,10 +1,6 @@
-Aquí tienes un ejemplo de un archivo `README.md` para tu proyecto:
-
----
-
 # Next.js Vehicle Filter and Result Application
 
-This is a Next.js application that allows users to filter vehicle models by type and model year, and view the results on a separate page. The project uses Tailwind CSS for styling and React's `Suspense` for handling loading states.
+This is a Next.js application that allows users to filter vehicle models by type and model year, and view the results on a separate page. The project was styled with Tailwind CSS.
 
 ## Features
 
@@ -12,8 +8,6 @@ This is a Next.js application that allows users to filter vehicle models by type
 - **Result Page**: Displays a list of vehicle models based on the selected vehicle type and model year.
 - **Static Generation**: Utilizes `generateStaticParams` for pre-rendering the result pages based on the selected parameters.
 - **Data Fetching**: Fetches vehicle data from the NHTSA API.
-- **Responsive Design**: Styled with Tailwind CSS, following best practices for responsive design and accessibility.
-- **Code Quality**: Configured with ESLint and Prettier to ensure consistent and clean code.
 
 ## Getting Started
 
@@ -27,8 +21,8 @@ This is a Next.js application that allows users to filter vehicle models by type
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/nrcs97/test-assessment.git
+   cd test-assessment
    ```
 
 2. Install the dependencies:
@@ -41,7 +35,7 @@ This is a Next.js application that allows users to filter vehicle models by type
 
 3. Set up environment variables:
 
-   - Create a `.env.local` file in the root directory and add any necessary environment variables.
+   - Create a `.env.local` file in the root directory.
 
 ### Running the Application
 
@@ -67,32 +61,11 @@ yarn build
 
 This will generate the optimized build files in the `.next` directory.
 
-### Linting and Formatting
-
-To check for linting errors:
-
-```bash
-npm run lint
-# or
-yarn lint
-```
-
-To format the code with Prettier:
-
-```bash
-npm run format
-# or
-yarn format
-```
-
 ## Project Structure
 
-- **pages/**: Contains the Next.js pages, including the filter and result pages.
-- **components/**: Contains the reusable React components used in the application.
-- **styles/**: Global styles and Tailwind CSS configuration.
+- **app/**: Contains the Next.js pages, including the filter and result pages.
+- **components/**: Contains the Filter component components used in the application.
 - **.env.local**: Environment variables for the project (not included in the repository).
-- **.eslintrc.js**: ESLint configuration.
-- **.prettierrc**: Prettier configuration.
 
 ## API Endpoints
 
@@ -107,11 +80,3 @@ yarn format
   ```
   https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json
   ```
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-Feel free to modify the README to better suit your project's needs!
