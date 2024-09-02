@@ -1,6 +1,7 @@
 import { Car } from "@/types/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 export default function Filter() {
   const [data, setData] = useState<Car[] | null>();
@@ -59,7 +60,9 @@ export default function Filter() {
     <section className="flex flex-col gap-y-[2rem] items-center">
       {data ? (
         <>
-          <h2>Select one of our vehicles right below</h2>
+          <h2 className="text-center">
+            Select one of our vehicles right below
+          </h2>
           <div className="flex flex-col gap-y-[1rem] sm:flex-row gap-x-[3rem]">
             <select
               name="car"
@@ -102,11 +105,7 @@ export default function Filter() {
           </Link>
         </>
       ) : (
-        <div className="flex gap-x-[1rem]">
-          <div className="animate-ping w-[10px] h-[10px] bg-white rounded-full" />
-          <div className="animate-ping w-[10px] h-[10px] bg-white rounded-full" />
-          <div className="animate-ping w-[10px] h-[10px] bg-white rounded-full" />
-        </div>
+        <Loader />
       )}
     </section>
   );

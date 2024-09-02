@@ -64,8 +64,10 @@ This will generate the optimized build files in the `.next` directory.
 ## Project Structure
 
 - **app/**: Contains the Next.js pages, including the filter and result pages.
-- **components/**: Contains the Filter component components used in the application.
-- **.env.local**: Environment variables for the project (not included in the repository).
+- **components/**: Contains the Filter, Loader and Error components used in the application.
+- **public/**: Contains the hero image displayed in the layout of the application.
+- **types/**: Contains types that define the structure of the data to be received.
+- **.env.local**: Environment variables for the project.
 
 ## API Endpoints
 
